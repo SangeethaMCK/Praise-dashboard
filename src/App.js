@@ -35,7 +35,7 @@ function App() {
       const response = await fetch('http://localhost:8080/praise');
       const praisesData = await response.json();
       console.log(praisesData);
-      setPraises(praisesData);
+      setPraises(praisesData.reverse());
     } catch (error) {
       console.error('Error fetching praises:', error);
     }

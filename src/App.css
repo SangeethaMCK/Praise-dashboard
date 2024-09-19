@@ -1,12 +1,12 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
 }
 
 button {
   padding: 10px;
-  background-color: #78789e;
+  background-color:  #7b7bb1;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -15,7 +15,7 @@ button {
 }
 
 button:hover {
-  background-color: #5a5a82;
+  background-color:#60608f;
 }
 .close-btn {
   position: absolute;
@@ -85,6 +85,7 @@ button:hover {
   width: 90%;
   max-width: 600px; 
   border-radius: 10px;
+  background-color: rgb(231, 231, 231); 
 }
 
 .praiseHeader {
@@ -100,7 +101,7 @@ button:hover {
 
 .addMem, .postPraise {
   z-index: 2;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(170, 202, 221);
   width: 90%;
   max-width: 500px; 
   padding: 20px;
@@ -145,6 +146,12 @@ button:hover {
 .addMem-form input, .postPraise-form select, .postPraise-form textarea {
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.addMem-form input:focus, .postPraise-form select:focus, .postPraise-form textarea:focus {
+  outline: none;
+  border: 2px solid #78789e;
 }
