@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  padding: 10px;
+  background-color: #78789e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover {
+  background-color: #5a5a82;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.close-btn:hover {
+  color: #78789e;
+}
+
+.header {
+  display: flex;
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.header__logo img {
+  width: 100px;
+  height: auto; 
+}
+
+.header h1 {
+  padding: 10px;
+  color: #333;
+  flex-grow: 1; 
+}
+
+.dashboard {
+  margin-top: 100px; 
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.dashboard h1 {
+  padding: 10px;
+  color: #333;
+  margin: auto;
+}
+
+.praises {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.praise {
+  border: 1px solid #333;
+  margin: 20px 50px;
+  width: 90%;
+  max-width: 600px; 
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.praiseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.praise h2, .date {
+  color: #333;
+}
+
+.addMem, .postPraise {
+  z-index: 2;
+  background-color: lightgoldenrodyellow;
+  width: 90%;
+  max-width: 500px; 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.praiseContent {
+  padding: 10px;
+}
+
+.addMem h1, .postPraise h1 {
+  padding: 10px;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+.addMem-form, .postPraise-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addMem-form__input, .postPraise-form__input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 100%;
+}
+
+.addMem-form__input label, .postPraise-form__input label {
+  padding-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.addMem-form input, .postPraise-form select, .postPraise-form textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
