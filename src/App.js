@@ -24,7 +24,7 @@ function App() {
   };
 
   const handleClosePostPraise = () => {
-    getPraises();
+    // getPraises();
     setShowPostPraise(false);  
     setShowAddMem(false);
     
@@ -74,7 +74,7 @@ function App() {
       </div>
 
       {showAddMem && <AddMem onClose={handleCloseAddMem}  />}
-      {showPostPraise && <PostPraise onClose={handleClosePostPraise}  />}
+      {showPostPraise && <PostPraise onClose={handleClosePostPraise} getPraises={getPraises} />}
     </>
   );
 }

@@ -46,6 +46,7 @@ function AddMem({ onClose }) {
             placeholder='Enter Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div className="addMem-form__input">
@@ -56,6 +57,7 @@ function AddMem({ onClose }) {
             placeholder='Enter Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <button className="submit-btn" type="submit">Add a Member</button>

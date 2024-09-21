@@ -155,3 +155,26 @@ button:hover {
   outline: none;
   border: 2px solid #78789e;
 }
+
+.error {
+  font-size: 12px;
+  color: red;
+  text-align: center;
+  margin-top: 0;
+  animation: horizontal-shaking 1s ease-in-out;
+}
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  10% , 30% , 50%, 70%, 90%{
+    transform: translateX(5px);
+  }
+  20%, 40% ,60%, 80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react';
 import './App.css';
 import { UserContext } from './UserContext.js';
-import { getPraises } from './App.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
-function PostPraise({ onClose }) {
+function PostPraise({ onClose, getPraises }) {
   const { users, setUsers } = useContext(UserContext);
   const [praisedBy, setPraisedBy] = useState('');
   const [sendTo, setSendTo] = useState('');
   const [content, setContent] = useState('');
+  const [error, setError] = useState('');
 
   async function postPraise(praisedBy, sendTo, content) {
     const response = await fetch('http://localhost:8080/praise', {
@@ -20,6 +22,7 @@ function PostPraise({ onClose }) {
     });
     if (response.ok) {
       alert('Praise posted successfully!');
+      getPraises();
       onClose(); 
     } else {
       alert('Error posting praise!');
@@ -29,13 +32,20 @@ function PostPraise({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(praisedBy===sendTo){
+      setError(`from & to can't be same`)
+    }
+    else{
     console.log(`Praised By: ${praisedBy}, Send To: ${sendTo}, Content: ${content}`);
+    setError('')
     postPraise(praisedBy, sendTo, content);
+    }
   };
 
   return (
     <div className='postPraise'>
       <h1>Post a Praise</h1>
+     {error && <p className='error'><FontAwesomeIcon icon={faCircleExclamation} className='icon'/> {error}</p> } 
       <span className="close-btn" onClick={onClose}>X</span>
       <form className="postPraise-form" onSubmit={handleSubmit}>
         <div className="postPraise-form__input">
