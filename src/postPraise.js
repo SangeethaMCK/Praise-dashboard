@@ -44,8 +44,9 @@ function PostPraise({ onClose }) {
             id='praisedBy'
             value={praisedBy}
             onChange={(e) => setPraisedBy(e.target.value)}
+            required
           >
-            <option value="">Select Member</option>
+            <option value="" disabled>Select Member</option>
             {users.map((user) => (
               <option key={user.userid} value={user.username}>{user.username}</option>
             ))}
@@ -57,8 +58,9 @@ function PostPraise({ onClose }) {
             id='sendTo'
             value={sendTo}
             onChange={(e) => setSendTo(e.target.value)}
+            required
           >
-            <option value="">Select Member</option>
+            <option value="" disabled>Select Member</option>
             {users.map((user) => (
               <option key={user.userid} value={user.username}>{user.username}</option>
             ))}
@@ -71,6 +73,7 @@ function PostPraise({ onClose }) {
             placeholder='Enter Content'
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            required
           />
         </div>
         <button className="submit-btn" type="submit">Post a Praise</button>
