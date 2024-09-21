@@ -57,7 +57,7 @@ function App() {
       <div className='dashboard'>
         <div className='dashboardHeader'>
           <h1>Praise Dashboard</h1>
-          <button onClick={handlePostPraise}>+ Post a Praise</button>
+          <button onClick={handlePostPraise} className='post-btn'>+ Post a Praise</button>
         </div>
 
         <div className='praises'>
