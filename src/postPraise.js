@@ -38,7 +38,7 @@ function PostPraise({ onClose, getPraises }) {
     else{
     console.log(`Praised By: ${praisedBy}, Send To: ${sendTo}, Content: ${content}`);
     setError('')
-    postPraise(praisedBy, sendTo, content);
+    postPraise(praisedBy.trim(), sendTo.trim(), content.trim());
     }
   };
 
